@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dk5h55pvbuy6g"]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_m8u7f"]
+[ext_resource type="Texture2D" uid="uid://n867rdpaykyj" path="res://wimiProductions.png" id="1_v2ci6"]
+[ext_resource type="PackedScene" uid="uid://bghrjftk5dsx0" path="res://scenes/virtual_controller.tscn" id="3_3b073"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1roh"]
+
+[node name="player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_m8u7f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0404858, 0.0404859)
+texture = ExtResource("1_v2ci6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k1roh")
+
+[node name="virtual_controller" parent="." instance=ExtResource("3_3b073")]
