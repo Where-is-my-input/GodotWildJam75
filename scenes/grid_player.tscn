@@ -1,0 +1,147 @@
+[gd_scene load_steps=18 format=3 uid="uid://ctc37qq6tuvlx"]
+
+[ext_resource type="Script" path="res://scenes/grid_player.gd" id="1_vq3ho"]
+[ext_resource type="PackedScene" uid="uid://bghrjftk5dsx0" path="res://scenes/virtual_controller.tscn" id="3_cv1fc"]
+[ext_resource type="Texture2D" uid="uid://cxjd7pfarsbdk" path="res://assets/sprite_main.png" id="4_23iu1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ur7w4"]
+size = Vector2(64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15va5"]
+atlas = ExtResource("4_23iu1")
+region = Rect2(0, 0, 265, 265)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpum0"]
+atlas = ExtResource("4_23iu1")
+region = Rect2(530, 0, 265, 265)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shv22"]
+atlas = ExtResource("4_23iu1")
+region = Rect2(265, 0, 265, 265)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5ow8"]
+atlas = ExtResource("4_23iu1")
+region = Rect2(0, 795, 265, 265)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdain"]
+atlas = ExtResource("4_23iu1")
+region = Rect2(265, 795, 265, 265)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5k0n"]
+atlas = ExtResource("4_23iu1")
+region = Rect2(530, 795, 265, 265)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h81x"]
+atlas = ExtResource("4_23iu1")
+region = Rect2(0, 530, 265, 265)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rysy6"]
+atlas = ExtResource("4_23iu1")
+region = Rect2(265, 530, 265, 265)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md6ul"]
+atlas = ExtResource("4_23iu1")
+region = Rect2(530, 530, 265, 265)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnkfe"]
+atlas = ExtResource("4_23iu1")
+region = Rect2(0, 265, 265, 265)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62nm7"]
+atlas = ExtResource("4_23iu1")
+region = Rect2(265, 265, 265, 265)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_heaji"]
+atlas = ExtResource("4_23iu1")
+region = Rect2(530, 265, 265, 265)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t0ab3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15va5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpum0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15va5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shv22")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5ow8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdain")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5ow8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5k0n")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h81x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rysy6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h81x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md6ul")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnkfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62nm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnkfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_heaji")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[node name="grid_player" type="Area2D" groups=["Player"]]
+z_index = 5
+collision_layer = 65536
+collision_mask = 65536
+script = ExtResource("1_vq3ho")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ur7w4")
+
+[node name="virtual_controller" parent="." instance=ExtResource("3_cv1fc")]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 65536
+collide_with_areas = true
+
+[node name="asp" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.332075, 0.332075)
+sprite_frames = SubResource("SpriteFrames_t0ab3")
+animation = &"left"

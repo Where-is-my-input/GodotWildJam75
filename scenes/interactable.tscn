@@ -1,0 +1,121 @@
+[gd_scene load_steps=9 format=3 uid="uid://cewmtpaqoupe2"]
+
+[ext_resource type="Script" path="res://scenes/interactable.gd" id="1_chaa4"]
+[ext_resource type="Texture2D" uid="uid://pt70hkrqaht3" path="res://assets/switch_base.png" id="2_j4obs"]
+[ext_resource type="Texture2D" uid="uid://byl2jvyrgf2v0" path="res://assets/switch.png" id="3_iu8kk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mktcj"]
+size = Vector2(32, 32)
+
+[sub_resource type="Animation" id="Animation_m2mml"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("switch:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-13, -15)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("switch:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.562325]
+}
+
+[sub_resource type="Animation" id="Animation_tujc5"]
+resource_name = "turn_off"
+length = 0.0333367
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("switch:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(25, -7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("switch:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.730603]
+}
+
+[sub_resource type="Animation" id="Animation_dc4ib"]
+resource_name = "turn_on"
+length = 0.0333367
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("switch:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.562325]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("switch:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-13, -15)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8grox"]
+_data = {
+"RESET": SubResource("Animation_m2mml"),
+"turn_off": SubResource("Animation_tujc5"),
+"turn_on": SubResource("Animation_dc4ib")
+}
+
+[node name="interactable" type="Area2D" groups=["Interactable"]]
+collision_layer = 65537
+collision_mask = 65537
+script = ExtResource("1_chaa4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mktcj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0449898, 0.0449898)
+texture = ExtResource("2_j4obs")
+
+[node name="switch" type="Sprite2D" parent="."]
+position = Vector2(-13, -15)
+rotation = -0.562325
+scale = Vector2(0.0546208, 0.0546208)
+texture = ExtResource("3_iu8kk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8grox")
+}

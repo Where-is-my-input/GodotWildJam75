@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckk0wyv26cd6h"]
+
+[ext_resource type="PackedScene" uid="uid://dk5h55pvbuy6g" path="res://scenes/player.tscn" id="1_3h04u"]
+
+[node name="player_reflection" instance=ExtResource("1_3h04u")]
+collision_layer = 16
+collision_mask = 16
+reflection = -1

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://hg86n3nsufu7"]
+
+[ext_resource type="Script" path="res://scenes/movable.gd" id="1_8c2nx"]
+[ext_resource type="Texture2D" uid="uid://dau760j8gxwa8" path="res://assets/box.png" id="2_sultp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gq8fr"]
+size = Vector2(32, 32)
+
+[node name="movable" type="Area2D" groups=["Interactable"]]
+collision_layer = 65536
+collision_mask = 0
+script = ExtResource("1_8c2nx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gq8fr")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 65536
+collide_with_areas = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 4
+scale = Vector2(0.0513513, 0.0513514)
+texture = ExtResource("2_sultp")
