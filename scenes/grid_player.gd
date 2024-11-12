@@ -3,7 +3,7 @@ extends Area2D
 @onready var ray: RayCast2D = $RayCast2D
 @export var reflection:int = 1
 @onready var asp: AnimatedSprite2D = $asp
-
+const DEAD_BODY = preload("res://scenes/dead_body.tscn")
 var tile_size = 64
 var moving = false
 var left = false
@@ -57,7 +57,11 @@ func animate(dir: Vector2):
 			asp.play("right")
 
 func damage():
-	print("damaged")
+	left = true
+	asp.visible = false
+	var body = DEAD_BODY.instantiate()
+	body.global_position = global_position
+	add_sibling(body)
 
 func leave():
 	left = true

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://hc0cmv3dwvuw"]
+[gd_scene load_steps=7 format=3 uid="uid://hc0cmv3dwvuw"]
 
 [ext_resource type="Script" path="res://scenes/button.gd" id="1_iwn8w"]
 [ext_resource type="Texture2D" uid="uid://bl64r1dqion2d" path="res://assets/button_down.png" id="2_lu8jp"]
 [ext_resource type="Texture2D" uid="uid://dsr3488l44cpf" path="res://assets/button_up.png" id="3_yhotv"]
+[ext_resource type="AudioStream" uid="uid://64wt47ffk67n" path="res://assets/sfx/click.wav" id="4_cxet0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oxvdd"]
 size = Vector2(32, 32)
@@ -38,6 +39,10 @@ shape = SubResource("RectangleShape2D_oxvdd")
 scale = Vector2(0.0535475, 0.0535475)
 sprite_frames = SubResource("SpriteFrames_16a4q")
 animation = &"down"
+
+[node name="audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_cxet0")
+bus = &"sfx"
 
 [connection signal="area_entered" from="." to="." method="interact"]
 [connection signal="area_exited" from="." to="." method="interact"]

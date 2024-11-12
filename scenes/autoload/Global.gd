@@ -8,6 +8,8 @@ var currentStage:int = 0
 var stagesCleared:Array[int]
 
 signal moved
+signal restart
+signal undo
 
 func _ready() -> void:
 	add_child(DEBUGGER.instantiate())

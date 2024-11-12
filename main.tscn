@@ -47,6 +47,7 @@ position = Vector2(64, 0)
 
 [node name="spikes" parent="door" node_paths=PackedStringArray("switches") instance=ExtResource("11_8d0sx")]
 position = Vector2(192, 0)
+state = null
 switches = [NodePath("../interactable")]
 
 [node name="interactable2" parent="door" instance=ExtResource("9_ksfrg")]

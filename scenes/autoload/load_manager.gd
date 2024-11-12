@@ -6,7 +6,7 @@ var progress:Array
 
 # Called when the node enters the scene tree for the first time.
 func loadScene(nextScene:String) -> void:
-	get_tree().change_scene_to_file("res://scenes/load_screen.tscn")
+	await get_tree().change_scene_to_file("res://scenes/load_screen.tscn")
 	scene = nextScene
 	ResourceLoader.load_threaded_request(scene, "", true)
 	set_process(true)

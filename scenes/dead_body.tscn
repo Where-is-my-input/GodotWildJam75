@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://e1qxcourv266"]
+
+[ext_resource type="Texture2D" uid="uid://n867rdpaykyj" path="res://wimiProductions.png" id="1_drabk"]
+
+[node name="dead_body" type="Sprite2D"]
+scale = Vector2(0.129555, 0.129555)
+texture = ExtResource("1_drabk")

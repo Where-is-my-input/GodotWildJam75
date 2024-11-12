@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://duytw0fa6lr4j"]
+[gd_scene load_steps=7 format=3 uid="uid://duytw0fa6lr4j"]
 
 [ext_resource type="Script" path="res://scenes/spikes.gd" id="1_c7pnr"]
 [ext_resource type="Texture2D" uid="uid://b67ehctcsoq1" path="res://assets/spikes_down.png" id="2_fw3ux"]
 [ext_resource type="Texture2D" uid="uid://2ddlemmncfus" path="res://assets/spikes_top_down.png" id="2_rk5mp"]
+[ext_resource type="AudioStream" uid="uid://dyh2ru2hq5lo0" path="res://assets/sfx/slice.wav" id="4_jkt3n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_go38a"]
 size = Vector2(32, 32)
@@ -39,5 +40,8 @@ debug_color = Color(0.994258, 0, 0.224954, 0.42)
 scale = Vector2(0.0924657, 0.0924658)
 sprite_frames = SubResource("SpriteFrames_osw5a")
 animation = &"up"
+
+[node name="audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_jkt3n")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

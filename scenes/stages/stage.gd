@@ -17,8 +17,11 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("restart") && !players[0].moving && !players[1].moving:
 		respawn()
+	if event.is_action_pressed("undo") && !players[0].moving && !players[1].moving:
+		Global.undo.emit()
 
 func respawn():
+	Global.restart.emit()
 	playersLeft = 2
 	Global.setMoves(movements)
 	players[0].respawn(spawnP1)
@@ -28,4 +31,6 @@ func playerLeft():
 	playersLeft -= 1
 	if playersLeft <= 0:
 		Global.stagesCleared[Global.currentStage] = 1
+		Global.currentStage += 1
 		LoadManager.loadScene(nextStage)
+		queue_free()
