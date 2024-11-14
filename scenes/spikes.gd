@@ -26,13 +26,14 @@ func _on_area_entered(area: Area2D) -> void:
 
 func change(x = null):
 	state = !state
-	asp.play("up" if state else "down")
-	csp.set_deferred("disabled", !state)
+	setState()
+	#asp.play("up" if state else "down")
+	#csp.set_deferred("disabled", state)
 
 func restart():
 	state = defaultState
 	setState()
 
 func setState():
-	asp.play("open" if state else "closed")
+	asp.play("up" if !state else "down")
 	csp.set_deferred("disabled", state)

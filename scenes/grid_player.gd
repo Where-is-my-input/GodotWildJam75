@@ -7,6 +7,7 @@ const DEAD_BODY = preload("res://scenes/dead_body.tscn")
 var tile_size = 64
 var moving = false
 var left = false
+var facing = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -44,6 +45,10 @@ func move(dir: Vector2):
 	asp.set_frame(0 if randi_range(0,1) == 0 else 2)
 
 func animate(dir: Vector2):
+	if facing != dir.x && dir.x != 0:
+		print("refl: ", reflection, "facing: ", facing)
+		facing = dir.x
+		asp.scale.x *= -1
 	match dir:
 		Vector2.UP:
 			asp.play("up")

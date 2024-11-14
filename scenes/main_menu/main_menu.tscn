@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cs87sly5qy386"]
+[gd_scene load_steps=5 format=3 uid="uid://cs87sly5qy386"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_8giav"]
 [ext_resource type="PackedScene" uid="uid://c3xgbexhgrg4d" path="res://scenes/stage_select.tscn" id="2_bkt41"]
 [ext_resource type="PackedScene" uid="uid://p0owvgwrdtl5" path="res://scenes/options/options.tscn" id="3_ejma0"]
+[ext_resource type="PackedScene" uid="uid://c71ywd0njd4d6" path="res://scenes/credits.tscn" id="4_meh3m"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -14,6 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_8giav")
 play = ExtResource("2_bkt41")
 options = ExtResource("3_ejma0")
+credits = ExtResource("4_meh3m")
 
 [node name="vBox" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -30,6 +32,7 @@ focus_neighbor_top = NodePath("../quit")
 text = "Play"
 
 [node name="options" type="Button" parent="vBox"]
+visible = false
 layout_mode = 2
 text = "Options"
 
@@ -38,6 +41,7 @@ layout_mode = 2
 text = "Credits"
 
 [node name="quit" type="Button" parent="vBox"]
+visible = false
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../play")
 text = "Quit"
