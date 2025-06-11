@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://wxyue6ha3xjj"]
 
-[ext_resource type="Script" path="res://scenes/portal.gd" id="1_cc8m8"]
+[ext_resource type="Script" uid="uid://bdox4e86a06pk" path="res://scenes/portal.gd" id="1_cc8m8"]
 [ext_resource type="Texture2D" uid="uid://dy44ovm6aedho" path="res://assets/void.png" id="1_welo8"]
 [ext_resource type="AudioStream" uid="uid://c6hes5rljdmqb" path="res://assets/sfx/cracking.wav" id="3_5503j"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cewmtpaqoupe2"]
 
-[ext_resource type="Script" path="res://scenes/interactable.gd" id="1_chaa4"]
+[ext_resource type="Script" uid="uid://bu40bwwk7umr" path="res://scenes/interactable.gd" id="1_chaa4"]
 [ext_resource type="Texture2D" uid="uid://pt70hkrqaht3" path="res://assets/switch_base.png" id="2_j4obs"]
 [ext_resource type="Texture2D" uid="uid://byl2jvyrgf2v0" path="res://assets/switch.png" id="3_iu8kk"]
 [ext_resource type="AudioStream" uid="uid://bclkrhlcp2c7a" path="res://assets/sfx/snap.wav" id="4_bwmjl"]
@@ -93,9 +93,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8grox"]
 _data = {
-"RESET": SubResource("Animation_m2mml"),
-"turn_off": SubResource("Animation_tujc5"),
-"turn_on": SubResource("Animation_dc4ib")
+&"RESET": SubResource("Animation_m2mml"),
+&"turn_off": SubResource("Animation_tujc5"),
+&"turn_on": SubResource("Animation_dc4ib")
 }
 
 [node name="interactable" type="Area2D" groups=["Interactable"]]

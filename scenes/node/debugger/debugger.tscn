@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bwlv44j128th5"]
 
-[ext_resource type="Script" path="res://scenes/node/debugger/debugger.gd" id="1_iorsu"]
+[ext_resource type="Script" uid="uid://dgjijvs7o54oc" path="res://scenes/node/debugger/debugger.gd" id="1_iorsu"]
 
 [node name="debugger" type="Node"]
 process_mode = 3

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bbka8nvb31rgl"]
 
-[ext_resource type="Script" path="res://scenes/stage_button.gd" id="1_lttd1"]
+[ext_resource type="Script" uid="uid://dkbp7sbywtcqi" path="res://scenes/stage_button.gd" id="1_lttd1"]
 
 [node name="stage_button" type="Button"]
 custom_minimum_size = Vector2(64, 64)

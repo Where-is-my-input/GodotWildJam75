@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://hg86n3nsufu7"]
 
-[ext_resource type="Script" path="res://scenes/movable.gd" id="1_8c2nx"]
+[ext_resource type="Script" uid="uid://bi5fgi8ctf25e" path="res://scenes/movable.gd" id="1_8c2nx"]
 [ext_resource type="Texture2D" uid="uid://dau760j8gxwa8" path="res://assets/box.png" id="2_sultp"]
 [ext_resource type="AudioStream" uid="uid://cp6d2dcy33irf" path="res://assets/sfx/box.wav" id="3_cx3lg"]
 

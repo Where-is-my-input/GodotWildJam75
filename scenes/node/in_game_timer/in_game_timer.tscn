@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://juugg1lfuceg"]
 
-[ext_resource type="Script" path="res://node/in_game_timer.gd" id="1_susjc"]
+[sub_resource type="Resource" id="Resource_wbm5n"]
+metadata/__load_path__ = "res://node/in_game_timer.gd"
 
 [node name="in_game_timer" type="Node"]
-script = ExtResource("1_susjc")
+script = SubResource("Resource_wbm5n")
